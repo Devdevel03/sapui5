@@ -1,8 +1,8 @@
 <mvc:View
-controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
-xmlns="sap.m"
-xmlns:mvc="sap.ui.core.mvc">
-    <Panel accessibleRole="Region">
+    controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Panel accessibleRole="Region" class="sapUiResponsiveMargin">
     <headerToolbar>
         <Toolbar>
             <Title text="{i18n>invoiceListTitle}"/>
@@ -31,31 +31,37 @@ xmlns:mvc="sap.ui.core.mvc">
                 hAlign="End"
                 minScreenWidth="Small"
                 demandPopin="true"
-                width="4em">
+                width="4em"
+                popinDisplay="Inline">
                 <Text text="{i18n>columnQuantity}"/>
             </Column>   
-            <Column>
+            <Column
+                popinDisplay="Inline">
                 <Text text="{i18n>columName}"/>
             </Column>
             <Column
-                minScreenWidth="small"
-                demandPopin="true">
+                minScreenWidth="Small"
+                demandPopin="true"
+                popinDisplay="Inline">
                 <Text text="{i18n>columnStatus}"/>
             </Column>
             <Column 
                 minScreenWidth="Tablet"
-                demandPopin="false">
+                demandPopin="true"
+                popinDisplay="Inline">
                 <Text text="{i18n>columnSupplier}"/>
             </Column>
             <Column
-                hAlign="End">
+                hAlign="End"
+                popinDisplay="Inline">
                 <Text text="{i18n>columnPrice}"/>
             </Column>
         </columns>
         <items>
             <ColumnListItem
                 type="Navigation"
-                press=".onPress">
+                press=".onPress"
+                class="sapUiResponsiveMargin">
                 <cells>
                     <ObjectNumber number="{invoice>Quantity}" emphasized="false"/>
                     <ObjectIdentifier title="{invoice>ProductName}"/>
@@ -73,7 +79,7 @@ xmlns:mvc="sap.ui.core.mvc">
                             }
                         }"
                         unit="{view>currency}"
-                        state="{= ${invoiceExtendedPrice} > 50 ? 'Error' : 'Success'}"/>
+                        state="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}"/>
                 </cells>
             </ColumnListItem>
         </items>
