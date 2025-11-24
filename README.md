@@ -1,5 +1,8 @@
 # SAPUI5 Application
 
+![Screenshot of the SAPUI5 Application's main view](overview.png)
+![Screenshot of the SAPUI5 Application's rating view](rating.png)
+
 ## Overview
 
 This repository contains a **Standard SAPUI5 Application**. It serves as a starting point or template for developing enterprise-grade web applications using the **OpenUI5/SAPUI5 framework**.
